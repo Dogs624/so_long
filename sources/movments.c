@@ -6,7 +6,7 @@
 /*   By: jvander- <jvander-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 15:16:15 by jvander-          #+#    #+#             */
-/*   Updated: 2021/10/20 11:45:13 by jvander-         ###   ########.fr       */
+/*   Updated: 2021/10/20 14:22:06 by jvander-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	go_up(t_vars *vars)
 	{
 		create_visual_map(*vars);
 		vars->nbr_mov++;
-		printf("nbr moves = %d\n", vars->nbr_mov);
+		printf("number moves : %d\n", vars->nbr_mov);
 		if (res == 2)
 			close_escape(vars);
 	}
@@ -58,7 +58,7 @@ void	go_down(t_vars *vars)
 	{
 		create_visual_map(*vars);
 		vars->nbr_mov++;
-		printf("number moves = %d\n", vars->nbr_mov);
+		printf("number moves : %d\n", vars->nbr_mov);
 		if (res == 2)
 			close_escape(vars);
 	}
@@ -84,7 +84,7 @@ void	go_left(t_vars *vars)
 	{
 		create_visual_map(*vars);
 		vars->nbr_mov++;
-		printf("nbr moves = %d\n", vars->nbr_mov);
+		printf("number moves : %d\n", vars->nbr_mov);
 		if (res == 2)
 			close_escape(vars);
 	}
@@ -110,7 +110,7 @@ void	go_right(t_vars *vars)
 	{
 		create_visual_map(*vars);
 		vars->nbr_mov++;
-		printf("nbr moves = %d\n", vars->nbr_mov);
+		printf("number moves : %d\n", vars->nbr_mov);
 		if (res == 2)
 			close_escape(vars);
 	}
