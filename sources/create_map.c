@@ -6,7 +6,7 @@
 /*   By: jvander- <jvander-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 14:42:10 by jvander-          #+#    #+#             */
-/*   Updated: 2021/10/20 12:52:30 by jvander-         ###   ########.fr       */
+/*   Updated: 2021/10/21 10:34:13 by jvander-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ char	**create_map(char *file, t_vars vars)
 
 	i = 0;
 	fd = open(file, O_RDONLY);
-	if (fd <= -1)
-		return (NULL);
 	map = ft_calloc(vars.win.raw_height + 1, sizeof(char *));
 	if (!map)
+	{
+		close(fd);
 		return (NULL);
+	}
 	line = get_next_line(fd);
 	while (line)
 	{

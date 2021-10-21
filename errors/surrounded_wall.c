@@ -6,7 +6,7 @@
 /*   By: jvander- <jvander-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:42:40 by jvander-          #+#    #+#             */
-/*   Updated: 2021/10/20 13:26:40 by jvander-         ###   ########.fr       */
+/*   Updated: 2021/10/21 10:26:06 by jvander-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,22 +70,8 @@ static int	check_last_col(t_vars vars)
 
 int	surrounded_wall(t_vars vars)
 {
-	if (!check_first_line(vars))
-	{
-		printf("Error\nThe map isn't surrounded by walls!\n");
-		return (0);
-	}
-	if (!check_last_line(vars))
-	{
-		printf("Error\nThe map isn't surrounded by walls!\n");
-		return (0);
-	}
-	if (!check_first_col(vars))
-	{
-		printf("Error\nThe map isn't surrounded by walls!\n");
-		return (0);
-	}
-	if (!check_last_col(vars))
+	if (!check_first_line(vars) || !check_last_line(vars)
+		|| !check_first_col(vars) || !check_last_col(vars))
 	{
 		printf("Error\nThe map isn't surrounded by walls!\n");
 		return (0);

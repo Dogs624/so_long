@@ -6,7 +6,7 @@
 #    By: jvander- <jvander-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 10:07:20 by jvander-          #+#    #+#              #
-#    Updated: 2021/10/20 13:08:55 by jvander-         ###   ########.fr        #
+#    Updated: 2021/10/21 10:14:30 by jvander-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ $(NAME):	$(OBJS) $(OBJS_UTILS) $(OBJS_ERRORS)
 			$(MAKE) -C $(LIBFT)
 			$(MAKE) -C $(MLX)
 			mv ./mlx/libmlx.dylib ./
-			$(CC) $(FLAGS) $(OBJS) $(OBJS_UTILS) $(OBJS_ERRORS) $(SOURCES)/libmlx.dylib -L$(LIBFT) -lft -o  $(NAME)
+			$(CC) $(FLAGS) $(OBJS) $(OBJS_UTILS) $(OBJS_ERRORS) libmlx.dylib -L$(LIBFT) -lft -o  $(NAME)
 
 all:	$(NAME)
 

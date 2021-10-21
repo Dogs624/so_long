@@ -6,7 +6,7 @@
 /*   By: jvander- <jvander-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:58:14 by jvander-          #+#    #+#             */
-/*   Updated: 2021/10/20 13:57:40 by jvander-         ###   ########.fr       */
+/*   Updated: 2021/10/21 10:27:36 by jvander-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,12 @@ int	main(int argc, char **argv)
 		exit(0);
 	vars = create_window(argv[1]);
 	vars.map = create_map(argv[1], vars);
-	keep_one_player(&vars);
-	if (!error_handling(vars))
+	if (!vars.map || !error_handling(vars))
 	{
-		close_escape(&vars);
-		ft_free(vars.map, vars.win.raw_height);
-		exit (0);
+		close_window(&vars);
+		return (0);
 	}
+	keep_one_player(&vars);
 	create_bckgrnd(vars);
 	create_visual_map(vars);
 	mlx_hook(vars.win.win, 2, 1L >> 0, close_escape, &vars);
