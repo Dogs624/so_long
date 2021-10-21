@@ -6,7 +6,7 @@
 #    By: jvander- <jvander-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 10:07:20 by jvander-          #+#    #+#              #
-#    Updated: 2021/10/21 10:14:30 by jvander-         ###   ########.fr        #
+#    Updated: 2021/10/21 10:41:20 by jvander-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,8 @@ $(NAME):	$(OBJS) $(OBJS_UTILS) $(OBJS_ERRORS)
 
 all:	$(NAME)
 
+bonus:	$(NAME)
+
 clean:
 		$(MAKE) clean -C $(LIBFT)
 		$(MAKE) clean -C $(MLX)
@@ -69,4 +71,4 @@ fclean:	clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean bonus re
